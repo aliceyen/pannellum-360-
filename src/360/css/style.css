@@ -1,0 +1,164 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+    #panorama {
+    width: 100vw;
+    height: 100vh;
+}
+.country_TW body.pt_landing_modules.pt_landing_modules.pt_landing_modules #panorama,
+.country_TW body.pt_landing_modules.pt_landing_modules.pt_landing_modules .pnlm-load-box p,
+.pnlm-load-button p{
+    color: #FFF;
+}
+
+    /* 解決圖片太大問題_新增css */
+        .pnlm-hotspot.pnlm-info span{
+            width: 300px;
+        }
+        .pnlm-hotspot.pnlm-info span a{
+            display: block;
+        }
+        .pnlm-hotspot.pnlm-info span a img {
+            width: 100%;
+            display: block;
+        }
+
+    /* LightBox */
+        .myLightBox{
+            width: 30px;
+            height: 30px;
+            background: yellow;
+            cursor: pointer;
+        }
+        .myLightBox:hover{
+            background: blue;
+        }
+        .open{
+            display: block;
+            transition: all .4s;
+        }
+        #openLightBox01{
+            width: 100%;
+            height: 100vh;
+            background:rgba(0,0,0,0.6);
+            position: absolute;
+            z-index: 9;
+            display: none;
+            overflow: auto;
+        }
+        .lightBoxContentDiv{
+            width: 100%;
+            max-width: 500px;
+            height: 100vh;
+            margin: 0 auto;
+            display: table;
+            box-sizing: border-box;
+        }
+        .lightBoxContent{
+            width: 100%;
+            color: #000;
+            
+            display: table-cell;
+            vertical-align: middle;
+        }
+        .lightBoxStyle{
+            background: #FFF;
+            padding: 20px;
+            box-sizing: border-box;
+            position: relative;
+        }
+        a.closeLightBox{
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            z-index: 1;
+            right: 0;
+            top: 0;
+            background: #F00;
+        }
+
+    /* 畫面剛載入的小動畫 */
+        .tips{
+            background:rgba(0,0,0,0.6);
+            width: 100%;
+            height: 100vh;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            padding: 0 30px;
+            box-sizing: border-box;
+        }
+        .tips .tipsDiv{
+            display: table;
+            width: 100%;
+            height: 100%;
+        }
+        .tips .tipsDiv .tipsContent{
+            display: table-cell;
+            vertical-align: middle;
+        }
+        .tips img{
+            width: 100%;
+            max-width: 400px;
+            margin: 0 auto;
+            display: block;
+        }
+
+    .textBox{
+        background: #F00;
+        width: 30px;
+        height: 30px;
+        display: block;
+    }
+    .textBox::before{
+        content: '使用偽元素before加了文字';
+        position: absolute;
+        z-index: 2;
+        background: blue;
+        color: #FFF;
+        width: 192px;
+        top: -2.5vw;
+        left: -5vw;
+    }
+
+    /* 動畫_針對指定元素加入animate.css */
+        .textBox {
+            /* 執行時間 */
+            -webkit-animation-duration: 2s;
+            animation-duration: 2s;
+            -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+
+            /* 重複 */
+            -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+
+            /* 動畫名稱 */
+            -webkit-animation-name: flash;
+            animation-name: flash
+        }
+        @-webkit-keyframes flash {
+            0%,50%,to {
+                opacity: 1
+            }
+            25%,75% {
+                opacity: 0.3
+            }
+        }
+        @keyframes flash {
+            0%,50%,to {
+                opacity: 1
+            }
+            25%,75% {
+                opacity: 0.3
+            }
+        }
+
+
+@media screen and (max-width: 500px){
+    .textBox::before{
+        top: -8.5vw;
+    }
+}
